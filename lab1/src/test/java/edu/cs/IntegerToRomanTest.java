@@ -8,7 +8,7 @@ import static org.junit.Assert.assertNull;
 /*
   @author   AlexAT
   @project   lab1
-  @class  IntegerToRoman
+  @class  IntegerToRomanTest
   @version  1.0.0
   @since 10.09.2024 - 19.49
 */
