@@ -1,5 +1,13 @@
 package edu.cs;
 
+/*
+  @author   AlexAT
+  @project   lab3-company-service
+  @class  CompanyServiceImplTest
+  @version  1.0.0
+  @since 28.09.2024 - 17.59
+*/
+
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
