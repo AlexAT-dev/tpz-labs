@@ -131,7 +131,6 @@ class CompanyServiceImplTest {
     }
 
     //----------TESTS 10 FOR getEmployeeCountForCompanyAndChildren()--------------//
-    // Test cases for getEmployeeCountForCompanyAndChildren method
     @Test
     void whenGettingEmployeeCountForDevelopmentThenReturns34() {
         long expected = 4 + 3 + 10 + 11 + 5 + 3; // Counts from development and its children
