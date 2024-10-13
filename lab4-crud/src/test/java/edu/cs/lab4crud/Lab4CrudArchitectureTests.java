@@ -48,7 +48,7 @@ class Lab4CrudArchitectureTests {
     }
 
     @Test
-    public void servicesShouldNotDependOnControllers() {
+    void servicesShouldNotDependOnControllers() {
         noClasses()
                 .that().resideInAPackage("..service..")
                 .should().dependOnClassesThat().resideInAPackage("..controller..")
@@ -78,7 +78,7 @@ class Lab4CrudArchitectureTests {
     }
 
     @Test
-    public void repositoriesShouldOnlyBeAccessedByServices() {
+    void repositoriesShouldOnlyBeAccessedByServices() {
         classes()
                 .that().resideInAPackage("..repository..")
                 .should().onlyBeAccessed().byClassesThat().resideInAPackage("..service..")
@@ -86,7 +86,7 @@ class Lab4CrudArchitectureTests {
     }
 
     @Test
-    void controllerClassesShouldBeAnnotatedByControllerClass() {
+    void controllerClassesShouldBeAnnotatedByController() {
         classes()
                 .that().resideInAPackage("..controller..")
                 .should()
@@ -95,7 +95,7 @@ class Lab4CrudArchitectureTests {
     }
 
     @Test
-    void serviceShouldBeAnnotatedService() {
+    void serviceShouldBeAnnotatedByService() {
         classes()
                 .that().resideInAPackage("..service..")
                 .should().beAnnotatedWith(Service.class)
@@ -103,7 +103,7 @@ class Lab4CrudArchitectureTests {
     }
 
     @Test
-    void repositoryShouldBeAnnotatedByRepositoryClass() {
+    void repositoryShouldBeAnnotatedByRepository() {
         classes()
                 .that().resideInAPackage("..repository..")
                 .should()
@@ -112,7 +112,7 @@ class Lab4CrudArchitectureTests {
     }
 
     @Test
-    public void servicesShouldHaveServiceSuffix() {
+    void servicesShouldHaveServiceSuffix() {
         classes()
                 .that().resideInAPackage("..service..")
                 .should().haveSimpleNameEndingWith("Service")
@@ -120,7 +120,7 @@ class Lab4CrudArchitectureTests {
     }
 
     @Test
-    public void controllersShouldHaveControllerSuffix() {
+    void controllersShouldHaveControllerSuffix() {
         classes()
                 .that().resideInAPackage("..controller..")
                 .should().haveSimpleNameEndingWith("Controller")
@@ -128,7 +128,7 @@ class Lab4CrudArchitectureTests {
     }
 
     @Test
-    public void repositoriesShouldHaveRepositorySuffix() {
+    void repositoriesShouldHaveRepositorySuffix() {
         classes()
                 .that().resideInAPackage("..repository..")
                 .should().haveSimpleNameEndingWith("Repository")
@@ -154,7 +154,7 @@ class Lab4CrudArchitectureTests {
     }
 
     @Test
-    public void methodsShouldNotThrowGenericExceptions() {
+    void methodsShouldNotThrowExceptions() {
         methods()
                 .should().notDeclareThrowableOfType(Exception.class)
                 .check(applicationClasses);
@@ -171,7 +171,7 @@ class Lab4CrudArchitectureTests {
     }
 
     @Test
-    public void methodsShouldBePublicVoidExceptPostConstruct() {
+    void methodsShouldBePublicVoidExceptPostConstruct() {
         methods()
                 .that().areDeclaredInClassesThat().resideInAPackage("..service..")
                 .and().areNotAnnotatedWith(PostConstruct.class)
@@ -189,7 +189,7 @@ class Lab4CrudArchitectureTests {
     }
 
     @Test
-    void controllersShouldHaveRequestMappingAnnotation() {
+    void controllersShouldBeAnnotatedWithRequestMapping() {
         classes()
                 .that().resideInAPackage("..controller..")
                 .should()
@@ -206,7 +206,7 @@ class Lab4CrudArchitectureTests {
     }
 
     @Test
-    public void modelsShouldBeAnnotatedWithDocument() {
+    void modelsShouldBeAnnotatedByDocument() {
         classes()
                 .that().resideInAPackage("..model..")
                 .should().beAnnotatedWith(Document.class)
