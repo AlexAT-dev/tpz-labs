@@ -9,7 +9,6 @@ package edu.cs.lab4crud.controller;
 */
 
 import edu.cs.lab4crud.model.Meal;
-import edu.cs.lab4crud.repository.MealRepository;
 import edu.cs.lab4crud.service.MealService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -27,7 +26,6 @@ public class MealRestController {
         return mealService.getAll();
     }
 
-    // read one
     @GetMapping("{id}")
     public Meal showOneById(@PathVariable String id) {
         return mealService.getById(id);
